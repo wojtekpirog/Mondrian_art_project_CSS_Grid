@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Wojciech Piróg">
+  <link rel="icon" type="image/x-icon" href="./images/mondrian.ico">
+  <title>Mondrian CSS Grid Composition</title>
+  <style>
+    /* CSS Variables */
+    :root {
+      --canvas: #f6f6f6;
+      --default: #fff4db;
+      --red: #E72F24;
+      --gap: #232629;
+      --black: #000;
+      --blue: #004592;
+      --yellow: #F9D01E;
+      --darkchocolate: #1a0c00;
+    }
+    /* CSS Styling */    
+    html {
+      background-color: var(--canvas);
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .painting {
+      width: 700px;
+      height: 670px;
+      display: grid;
+      grid-template-columns: 72px 83px 90px 185px 85px 95px 30px;
+      grid-template-rows: 60px 150px 150px 95px 80px 50px 25px;
+      gap: 10px;
+      background-color: var(--gap);
+      box-shadow: 10px 10px 6px var(--black);
+    }
+    .tile {
+      background-color: var(--default);
+    }
+    .colspan2 {
+      grid-column: span 2;
+    }
+    .colspan3 {
+      grid-column: span 3;
+    }
+    .rowspan2 {
+      grid-row: span 2;
+    }
+    .rowspan3 {
+      grid-row: span 3;
+    }
+    .rowspan4 {
+      grid-row: span 4;
+    }    
+    .yellow {
+      background-color: var(--yellow);
+    }
+    .red {
+      background-color: var(--red);
+    }
+    .blue {
+      background-color: var(--blue);
+    }     
+    .area {
+      grid-area: 2 / 2 / 4 / 5;      
+    }
+    .darkchocolate {
+      background-color: var(--darkchocolate);
+    }
+  </style>
+</head>
+<body>
+  <div class="painting">
+    <div class="tile colspan2"></div>
+    <div class="tile colspan2"></div>
+    <div class="tile colspan2 yellow"></div>
+    <div class="tile rowspan4"></div>
+    <div class="tile"></div>
+    <div class="tile red area"></div>
+    <div class="tile colspan2 yellow"></div>
+    <div class="tile rowspan2"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile darkchocolate colspan2 rowspan2"></div>
+    <div class="tile"></div>
+    <div class="tile colspan2"></div>
+    <div class="tile yellow rowspan3"></div>
+    <div class="tile"></div>
+    <div class="tile colspan2 rowspan2 blue"></div>
+    <div class="tile rowspan3 red"></div>
+    <div class="tile colspan2 rowspan2"></div>
+    <div class="tile darkchocolate"></div>
+    <div class="tile colspan3"></div>
+  </div>
+</body>
+</html>
